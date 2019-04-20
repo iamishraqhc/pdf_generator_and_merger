@@ -7,6 +7,35 @@ import math
 df = pd.read_excel('CALCOLATORE PREVENTIVI.xls', sheet_name='CALCOLATORE') # col = 1, row = 2
 
 var1 = df.loc[3][7]
+raw_var1 = var1.split('\n')
+if len(raw_var1) == 1:
+    var1_1 = raw_var1[0]
+    var1_2 = ""
+    var1_3 = ""
+    var1_4 = ""
+    var1_5 = ""
+
+elif len(raw_var1) == 2:
+    var1_1 = raw_var1[0]
+    var1_2 = raw_var1[1]
+    var1_3 = ""
+    var1_4 = ""
+    var1_5 = ""
+
+elif len(raw_var1) == 3:
+    var1_1 = raw_var1[0]
+    var1_2 = raw_var1[1]
+    var1_3 = raw_var1[2]
+    var1_4 = ""
+    var1_5 = ""
+
+elif len(raw_var1) == 4:
+    var1_1 = raw_var1[0]
+    var1_2 = raw_var1[1]
+    var1_3 = raw_var1[2]
+    var1_4 = raw_var1[3].split(" ")[0]
+    var1_5 = raw_var1[3].split(" ")[1]
+
 var2 = df.loc[5][3] # 7 4
 var3 = df.loc[7][3] # 9 4
 var4 = df.loc[11][2] # 13 3
@@ -34,14 +63,18 @@ pdf_5 = df.loc[43][4] # 45 5
 final_text_html = ''
 with open('test.html','r') as file:
     text_html = file.read()
-    text_html = text_html.replace('var5', var5)
-    text_html = text_html.replace('var7', var7)
-    text_html = text_html.replace('var9', var9)
-    text_html = text_html.replace('var3', var3)
-    text_html = text_html.replace('var8', var8)
+    text_html = text_html.replace('var5', str(var5))
+    text_html = text_html.replace('var7', str(var7))
+    text_html = text_html.replace('var9', str(var9))
+    text_html = text_html.replace('var3', str(var3))
+    text_html = text_html.replace('var8', str(var8))
     text_html = text_html.replace('var4', str(var4))
-    text_html = text_html.replace('var2', var2)
-    text_html = text_html.replace('var1_1', 'sdasdada') # special consideration
+    text_html = text_html.replace('var2', str(var2))
+    text_html = text_html.replace('var1_1', str(var1_1)) # special consideration
+    text_html = text_html.replace('var1_2', str(var1_2))
+    text_html = text_html.replace('var1_3', str(var1_3))
+    text_html = text_html.replace('var1_4', str(var1_4))
+    text_html = text_html.replace('var1_5', str(var1_5))
     final_text_html = text_html
     # print(text_html)
 
