@@ -85,7 +85,7 @@ with open('test.html','r') as file:
 
 with open('test2.html','w') as file2:
     file2.write(final_text_html)
-config_path = pdfkit.configuration(wkhtmltopdf=bytes(r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe', 'utf8'))
+config_path = pdfkit.configuration(wkhtmltopdf=bytes(r'..\wkhtmltopdf\bin\wkhtmltopdf.exe', 'utf8'))
 
 pdfkit.from_file('test2.html','output1.pdf',configuration=config_path)
 print("Output generated")
