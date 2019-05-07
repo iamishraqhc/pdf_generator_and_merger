@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['excel_input.py'],
-             pathex=['C:\\Users\\Ishraq Haider\\PycharmProjects\\pdfGenerator'],
+             pathex=['D:\\Ishraq Haider\\pdf_generator_and_merger'],
              binaries=[],
              datas=[],
              hiddenimports=[],
